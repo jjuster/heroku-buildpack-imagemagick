@@ -15,11 +15,11 @@ CACHE_FILE="$CACHE_DIR/imagemagick.tar.gz"
 
 if [ ! -f $CACHE_FILE ]; then
   # install imagemagick
-  IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-6.9.3-8}"
+  IMAGE_MAGICK_VERSION="${IMAGE_MAGICK_VERSION:-6.9.2-10}"
   IMAGE_MAGICK_FILE="ImageMagick-$IMAGE_MAGICK_VERSION.tar.gz"
   IMAGE_MAGICK_DIR="ImageMagick-$IMAGE_MAGICK_VERSION"
   # SSL cert used on imagemagick not recognized by heroku.
-  IMAGE_MAGICK_URL="http://www.imagemagick.org/download/releases/$IMAGE_MAGICK_FILE"
+  IMAGE_MAGICK_URL="https://s3.amazonaws.com/pradux-buildpacks/ImageMagick-6.9.2-10.tar.gz"
 
   echo "-----> Downloading ImageMagick from $IMAGE_MAGICK_URL"
   wget $IMAGE_MAGICK_URL -P $BUILD_DIR | indent
