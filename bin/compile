@@ -32,9 +32,6 @@ if [ ! -f $CACHE_FILE ]; then
   fi
   tar xvf $BUILD_DIR/$IMAGE_MAGICK_FILE | indent
 
-  echo "-----> Removing old png lib"
-  rm -rf /usr/include/libpng12
-
   echo "-----> Building ImageMagick"
   cd $IMAGE_MAGICK_DIR
   export CFLAGS="-I/usr/include/libxml2 -pthread -I/usr/include/OpenEXR -I/usr/include/lqr-1 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/graphviz -I/usr/include/freetype2 -I/usr/include/freetype2 -pthread -fopenmp -g -O2 -Wall -mtune=core-avx-i -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 DMAGICKCORE_QUANTUM_DEPTH=16"
