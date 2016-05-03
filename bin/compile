@@ -34,8 +34,8 @@ if [ ! -f $CACHE_FILE ]; then
 
   echo "-----> Building ImageMagick"
   cd $IMAGE_MAGICK_DIR
-  export CFLAGS="-I/usr/include/libxml2 -pthread -I/usr/include/OpenEXR -I/usr/include/lqr-1 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/graphviz -I/usr/include/freetype2 -I/usr/include/freetype2 -pthread -fopenmp -g -O2 -Wall -mtune=core-avx-i -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 DMAGICKCORE_QUANTUM_DEPTH=16"
-  export CPPFLAGS="-I$INSTALL_DIR/include -I$BUILD_DIR/vendor/libpng/include -I$BUILD_DIR/vendor/libjpeg/include"
+  export CFLAGS="-I/usr/include/libxml2 -I/usr/include/OpenEXR -I/usr/include/lqr-1 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/graphviz -I/usr/include/freetype2 -I/usr/include/freetype2 -fopenmp -g -O2 -Wall -mtune=core-avx-i -fexceptions -pthread -DMAGICKCORE_HDRI_ENABLE=0 DMAGICKCORE_QUANTUM_DEPTH=16"
+  export CPPFLAGS="-I$INSTALL_DIR/include"
   export LDFLAGS="-L$INSTALL_DIR/lib -L$BUILD_DIR/vendor/libpng/lib -L$BUILD_DIR/vendor/libjpeg/lib"
   export LIBS="-llibjpeg -llibpng"
   ./configure --prefix=$INSTALL_DIR --with-modules
